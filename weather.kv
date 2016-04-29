@@ -9,7 +9,9 @@ AddLocationForm:
         size_hint_y: None
         TextInput:
             id: search_box
+            multiline: False
             size_hint_x: 50
+            on_text_validate: root.search_location()
         Button:
             text: 'Search'
             size_hint_x: 25
