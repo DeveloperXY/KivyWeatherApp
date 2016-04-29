@@ -3,6 +3,7 @@ AddLocationForm:
 <AddLocationForm>:
     orientation: 'vertical'
     search_input: search_box
+    search_results: search_results_list
     BoxLayout:
         height: '40dp'
         size_hint_y: None
@@ -17,4 +18,5 @@ AddLocationForm:
             text: 'Current Location'
             size_hint_x: 25
     ListView:
-        item_strings: ["Palo Alto, MX", "Palo Alto, US"]
+        id: search_results_list
+        item_strings: []
