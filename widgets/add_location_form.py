@@ -10,9 +10,12 @@ class AddLocationForm(BoxLayout):
     search_results = ObjectProperty()
 
     def search_location(self):
-        search_template = "http://api.openweathermap.org/data/2.5/find?q={}&appid={}"
-        search_url = search_template.format(self.search_input.text, API_KEY)
-        request = UrlRequest(search_url, self.found_location)
+        location_text = self.search_input.text
+
+        if location_text != "":
+            search_template = "http://api.openweathermap.org/data/2.5/find?q={}&appid={}"
+            search_url = search_template.format(location_text, API_KEY)
+            request = UrlRequest(search_url, self.found_location)
 
     def found_location(self, request, data):
         cities = [(d['name'], d['sys']['country']) for d in data['list']]
