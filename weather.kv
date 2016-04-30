@@ -2,11 +2,9 @@
 #:import ListAdapter kivy.adapters.listadapter.ListAdapter
 #:include current_weather_widget.kv
 #:include add_location_form.kv
+#:include location_button.kv
 
 WeatherRoot:
 
 <WeatherRoot>:
     AddLocationForm
-
-<LocationButton>:
-    on_press: app.root.show_current_weather(self.text)
