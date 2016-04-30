@@ -1,15 +1,28 @@
 <CurrentWeather>:
     orientation: "vertical"
 
+    BoxLayout:
+        Label:
+            text: "{} ({})".format(root.location[0], root.location[1])
+            font_size: "30dp"
+        Label:
+            text: "{}".format(root.temp)
+            font_size: "30dp"
     Label:
-        text: app.root.format_location(root.location)
+        text: root.conditions
+    BoxLayout:
+        orientation: "horizontal"
+
+        Label:
+            text: "Low: {}".format(root.temp_min)
+        Label:
+            text: "High: {}".format(root.temp_max)
     BoxLayout:
         orientation: "horizontal"
         size_hint_y: None
         height: "40dp"
-
         Button:
-            text: "Add location"
+            text: "Add Location"
             on_press: app.root.show_add_location_form()
         Button:
             text: "Forecast"

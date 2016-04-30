@@ -14,7 +14,7 @@ class WeatherRoot(BoxLayout):
         if location is None and self.current_weather is None:
             self.current_weather = CurrentWeather()
         if location is not None:
-            self.current_weather.location = location
+            self.current_weather = CurrentWeather(location=location)
 
         self.current_weather.update_weather()
         self.add_widget(self.current_weather)
