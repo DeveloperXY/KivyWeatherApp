@@ -12,7 +12,7 @@ class WeatherRoot(BoxLayout):
         self.clear_widgets()
 
         if location is None and self.current_weather is None:
-            location = "New York (US)"
+            location = ("New York", "US")
         if location is not None:
             self.current_weather = Factory.CurrentWeather()
             self.current_weather.location = location
@@ -22,3 +22,7 @@ class WeatherRoot(BoxLayout):
     def show_add_location_form(self):
         self.clear_widgets()
         self.add_widget(AddLocationForm())
+
+    @staticmethod
+    def format_location(location):
+        return "{} ({})".format(location[0], location[1])

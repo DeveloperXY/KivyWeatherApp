@@ -1,2 +1,5 @@
 <LocationButton>:
-    on_press: app.root.show_current_weather(self.text)
+    text: app.root.format_location(self.location)
+    height: "40dp"
+    size_hint_y: None
+    on_press: app.root.show_current_weather(self.location)

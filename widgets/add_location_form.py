@@ -15,8 +15,12 @@ class AddLocationForm(BoxLayout):
         request = UrlRequest(search_url, self.found_location)
 
     def found_location(self, request, data):
-        cities = ["{} ({})".format(d['name'], d['sys']['country']) for d in data['list']]
+        cities = [(d['name'], d['sys']['country']) for d in data['list']]
         # self.search_results.item_strings = cities
         del self.search_results.adapter.data[:]
         self.search_results.adapter.data.extend(cities)
         self.search_results._trigger_reset_populate()
+
+    def args_converter(self, index, data_item):
+        city, country = data_item
+        return {'location': (city, country)}

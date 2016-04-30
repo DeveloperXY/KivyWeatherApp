@@ -21,7 +21,10 @@
     ListView:
         id: search_results_list
         adapter:
-            ListAdapter(data=[], cls=main.LocationButton)
+            ListAdapter(
+            data=[],
+            cls=main.LocationButton,
+            args_converter=root.args_converter)
     Button:
         height: "40dp"
         size_hint_y: None

@@ -1,5 +1,5 @@
 <CurrentWeather@BoxLayout>:
-    location: ""
+    location: ['New York', 'US']
     conditions: None
     temp: None
     temp_min: None
@@ -7,7 +7,7 @@
     orientation: "vertical"
 
     Label:
-        text: root.location
+        text: app.root.format_location(root.location)
     BoxLayout:
         orientation: "horizontal"
         size_hint_y: None
