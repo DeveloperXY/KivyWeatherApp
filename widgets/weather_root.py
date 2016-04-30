@@ -1,8 +1,8 @@
-from kivy.factory import Factory
 from kivy.properties import ObjectProperty
 from kivy.uix.boxlayout import BoxLayout
 
 from add_location_form import AddLocationForm
+from widgets.current_weather import CurrentWeather
 
 
 class WeatherRoot(BoxLayout):
@@ -14,8 +14,7 @@ class WeatherRoot(BoxLayout):
         if location is None and self.current_weather is None:
             location = ("New York", "US")
         if location is not None:
-            self.current_weather = Factory.CurrentWeather()
-            self.current_weather.location = location
+            self.current_weather = CurrentWeather(location=location)
 
         self.add_widget(self.current_weather)
 
