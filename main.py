@@ -3,15 +3,17 @@ from kivy.network.urlrequest import UrlRequest
 from kivy.properties import ObjectProperty
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.listview import ListItemButton
+from kivy.factory import Factory
 
 API_KEY = '787d0e1db679f03b5812253618f1481a'
 
 
 class WeatherRoot(BoxLayout):
     def show_current_weather(self, location):
-        from kivy.uix.label import Label
         self.clear_widgets()
-        self.add_widget(Label(text=location))
+        current_weather = Factory.CurrentWeather()
+        current_weather.location = location
+        self.add_widget(current_weather)
 
 
 class AddLocationForm(BoxLayout):
