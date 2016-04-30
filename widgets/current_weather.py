@@ -2,6 +2,7 @@ from kivy.network.urlrequest import UrlRequest
 from kivy.properties import ListProperty, NumericProperty, ObjectProperty
 from kivy.uix.boxlayout import BoxLayout
 from kivy.factory import Factory
+from widgets.conditions import Conditions
 
 API_KEY = '787d0e1db679f03b5812253618f1481a'
 

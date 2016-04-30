@@ -1,7 +1,5 @@
-<ClearConditions@BoxLayout>:
-    conditions: ""
-
-    canvas:
+<ClearConditions@Conditions>:
+    canvas.before:
         Color:
             rgb: [0.8, 0.7, 0.3]
         Line:
@@ -25,5 +23,3 @@
         Ellipse:
             pos: self.center_x - ((self.height - 40) / 2), self.pos[1] + 20
             size: [self.height - 40, self.height - 40]
-    Label:
-        text: root.conditions
