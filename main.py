@@ -1,11 +1,7 @@
 from kivy.app import App
-from kivy.uix.listview import ListItemButton
 
 import weather_root
-
-
-class LocationButton(ListItemButton):
-    pass
+from location_button import LocationButton
 
 
 class WeatherApp(App):
