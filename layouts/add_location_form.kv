@@ -22,3 +22,8 @@
         id: search_results_list
         adapter:
             ListAdapter(data=[], cls=main.LocationButton)
+    Button:
+        height: "40dp"
+        size_hint_y: None
+        text: "Cancel"
+        on_press: app.root.show_current_weather()

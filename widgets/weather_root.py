@@ -8,7 +8,7 @@ from add_location_form import AddLocationForm
 class WeatherRoot(BoxLayout):
     current_weather = ObjectProperty()
 
-    def show_current_weather(self, location):
+    def show_current_weather(self, location=None):
         self.clear_widgets()
 
         if location is None and self.current_weather is None:
