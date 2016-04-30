@@ -6,7 +6,7 @@ API_KEY = '787d0e1db679f03b5812253618f1481a'
 
 
 class CurrentWeather(BoxLayout):
-    location = ListProperty(['New York', 'US'])
+    location = ListProperty(['Fez', 'MA'])
     conditions = StringProperty()
     temp = NumericProperty()
     temp_min = NumericProperty()
