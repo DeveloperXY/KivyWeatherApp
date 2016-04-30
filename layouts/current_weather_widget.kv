@@ -2,6 +2,7 @@
 
 <CurrentWeather>:
     orientation: "vertical"
+    conditions: conditions
 
     BoxLayout:
         Label:
@@ -12,8 +13,6 @@
             font_size: "30dp"
     BoxLayout:
         id: conditions
-        UnknownConditions:
-            conditions: root.conditions
     BoxLayout:
         orientation: "horizontal"
 
