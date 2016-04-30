@@ -1,7 +1,7 @@
 from kivy.app import App
 
-import weather_root
-from location_button import LocationButton
+import widgets.weather_root
+from widgets.location_button import LocationButton
 
 
 class WeatherApp(App):
