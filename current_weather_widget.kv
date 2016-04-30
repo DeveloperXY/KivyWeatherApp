@@ -1,0 +1,19 @@
+<CurrentWeather@BoxLayout>:
+    location: ""
+    conditions: None
+    temp: None
+    temp_min: None
+    temp_max: None
+    orientation: "vertical"
+
+    Label:
+        text: root.location
+    BoxLayout:
+        orientation: "horizontal"
+        size_hint_y: None
+        height: "40dp"
+
+        Button:
+            text: "Add location"
+        Button:
+            text: "Forecast"
