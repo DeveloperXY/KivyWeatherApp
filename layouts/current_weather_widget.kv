@@ -1,3 +1,5 @@
+#:include layouts/unknown_conditions_widget.kv
+
 <CurrentWeather>:
     orientation: "vertical"
 
@@ -8,8 +10,10 @@
         Label:
             text: "{}".format(root.temp)
             font_size: "30dp"
-    Label:
-        text: root.conditions
+    BoxLayout:
+        id: conditions
+        UnknownConditions:
+            conditions: root.conditions
     BoxLayout:
         orientation: "horizontal"
 
