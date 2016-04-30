@@ -15,6 +15,10 @@ class WeatherRoot(BoxLayout):
         current_weather.location = location
         self.add_widget(current_weather)
 
+    def show_add_location_form(self):
+        self.clear_widgets()
+        self.add_widget(AddLocationForm())
+
 
 class AddLocationForm(BoxLayout):
     search_input = ObjectProperty()
