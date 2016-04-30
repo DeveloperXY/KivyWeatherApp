@@ -1,4 +1,4 @@
-#:import ListItemButton kivy.uix.listview.ListItemButton
+#:import main main
 #:import ListAdapter kivy.adapters.listadapter.ListAdapter
 
 WeatherRoot:
@@ -28,4 +28,7 @@ WeatherRoot:
     ListView:
         id: search_results_list
         adapter:
-            ListAdapter(data=[], cls=ListItemButton)
+            ListAdapter(data=[], cls=main.LocationButton)
+
+<LocationButton>:
+    on_press: app.root.show_current_weather(self.text)
