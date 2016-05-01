@@ -1,6 +1,6 @@
+from kivy.gesture import Gesture
 from kivy.gesture import GestureDatabase
 from kivy.uix.boxlayout import BoxLayout
-from kivy.gesture import Gesture
 
 gesture_strings = {
     'left_to_right_line': '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',
@@ -16,6 +16,21 @@ for name, gesture_string in gesture_strings.items():
 
 
 class GestureBox(BoxLayout):
+    def __init__(self, **kwargs):
+        for name in gesture_strings:
+            self.register_event_type('on_{}'.format(name))
+
+        super(GestureBox, self).__init__(**kwargs)
+
+    def on_left_to_right_line(self):
+        pass
+
+    def on_right_to_left_line(self):
+        pass
+
+    def on_bottom_to_top_line(self):
+        pass
+
     def on_touch_down(self, touch):
         touch.ud['gesture_path'] = [(touch.x, touch.y)]
         super(GestureBox, self).on_touch_down(touch)
@@ -29,8 +44,10 @@ class GestureBox(BoxLayout):
             gesture = Gesture()
             gesture.add_stroke(touch.ud['gesture_path'])
             gesture.normalize()
-            match = gestures.find(gesture, minscore=0.90)
+            # match = (score, gesture)
+            match = gestures.find(gesture, minscore=0.80)
             if match:
-                print "{} happened".format(match[1].name)
+                gesture_name = match[1].name
+                self.dispatch('on_'.format(gesture_name))
 
         super(GestureBox, self).on_touch_up(touch)
