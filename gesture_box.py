@@ -48,6 +48,6 @@ class GestureBox(BoxLayout):
             match = gestures.find(gesture, minscore=0.80)
             if match:
                 gesture_name = match[1].name
-                self.dispatch('on_'.format(gesture_name))
+                self.dispatch('on_{}'.format(gesture_name))
 
         super(GestureBox, self).on_touch_up(touch)

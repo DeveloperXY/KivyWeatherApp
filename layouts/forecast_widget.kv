@@ -1,6 +1,8 @@
 <Forecast>:
     forecast_container: forecast_container
     orientation: "vertical"
+    on_left_to_right_line: app.root.show_current_weather(root.location)
+    on_bottom_to_top_line: root.update_weather()
 
     Label:
         size_hint_y: 0.1
