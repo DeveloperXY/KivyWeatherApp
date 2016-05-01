@@ -1,8 +1,8 @@
+from kivy.factory import Factory
 from kivy.network.urlrequest import UrlRequest
 from kivy.properties import ListProperty, NumericProperty, ObjectProperty
 from kivy.uix.boxlayout import BoxLayout
-from kivy.factory import Factory
-from widgets.conditions import Conditions
+
 from widgets.snow_conditions import SnowConditions
 
 API_KEY = '787d0e1db679f03b5812253618f1481a'
@@ -28,7 +28,6 @@ class CurrentWeather(BoxLayout):
         self.temp_max = data['main']['temp_max']
 
     def render_conditions(self, conditions_description):
-        conditions_description = 'snow'
         conditions_widget = Factory.ClearConditions() \
             if "clear" in conditions_description \
             else SnowConditions() if "snow" in conditions_description \

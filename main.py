@@ -8,5 +8,10 @@ class WeatherApp(App):
     pass
 
 
+def args_converter(index, data_item):
+    city, country = data_item
+    return {'location': (city, country)}
+
+
 if __name__ == '__main__':
     WeatherApp().run()

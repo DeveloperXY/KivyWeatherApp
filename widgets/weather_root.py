@@ -7,6 +7,7 @@ from widgets.current_weather import CurrentWeather
 
 class WeatherRoot(BoxLayout):
     current_weather = ObjectProperty()
+    locations = ObjectProperty()
 
     def show_current_weather(self, location=None):
         self.clear_widgets()

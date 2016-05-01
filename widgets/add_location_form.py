@@ -22,8 +22,3 @@ class AddLocationForm(BoxLayout):
         del self.search_results.adapter.data[:]
         self.search_results.adapter.data.extend(cities)
         self.search_results._trigger_reset_populate()
-
-    @staticmethod
-    def args_converter(index, data_item):
-        city, country = data_item
-        return {'location': (city, country)}
