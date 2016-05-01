@@ -1,0 +1,25 @@
+<ForecastLabel@BoxLayout>:
+    date: ""
+    conditions_image: ""
+    conditions: ""
+    temp_min: None
+    temp_max: None
+    canvas.before:
+        Color:
+            rgb: [0.2, 0.2, 0.2]
+        Line:
+            points: [self.pos[0], self.pos[1], self.width, self.pos[1]]
+    Label:
+        text: root.date
+    BoxLayout:
+        orientation: "vertical"
+        AsyncImage:
+            source: root.conditions_image
+        Label:
+            text: root.conditions
+    BoxLayout:
+        orientation: "vertical"
+        Label:
+            text: "Low: {}".format(root.temp_min)
+        Label:
+            text: "High: {}".format(root.temp_max)
