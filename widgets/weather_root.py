@@ -24,6 +24,11 @@ class WeatherRoot(BoxLayout):
         self.clear_widgets()
         self.add_widget(AddLocationForm())
 
+    def show_locations(self):
+        self.clear_widgets()
+
+        self.add_widget(self.locations)
+
     @staticmethod
     def format_location(location):
         return "{} ({})".format(*location)
