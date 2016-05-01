@@ -1,15 +1,15 @@
 from kivy.factory import Factory
 from kivy.network.urlrequest import UrlRequest
 from kivy.properties import ListProperty, NumericProperty, ObjectProperty
-from kivy.uix.boxlayout import BoxLayout
 
-from widgets.snow_conditions import SnowConditions
+from gesture_box import GestureBox
 from main import WeatherApp
+from widgets.snow_conditions import SnowConditions
 
 API_KEY = '787d0e1db679f03b5812253618f1481a'
 
 
-class CurrentWeather(BoxLayout):
+class CurrentWeather(GestureBox):
     location = ListProperty(['Fez', 'MA'])
     conditions = ObjectProperty()
     temp = NumericProperty()

@@ -3,14 +3,14 @@ import datetime
 from kivy.factory import Factory
 from kivy.network.urlrequest import UrlRequest
 from kivy.properties import ListProperty, ObjectProperty
-from kivy.uix.boxlayout import BoxLayout
 
+from gesture_box import GestureBox
 from main import WeatherApp
 
 API_KEY = '787d0e1db679f03b5812253618f1481a'
 
 
-class Forecast(BoxLayout):
+class Forecast(GestureBox):
     location = ListProperty(['New York', 'US'])
     forecast_container = ObjectProperty()
 
