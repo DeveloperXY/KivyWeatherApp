@@ -25,8 +25,7 @@ class Forecast(BoxLayout):
         request = UrlRequest(weather_url, self.weather_retrieved)
 
     def weather_retrieved(self, request, data):
-        if self.forecast_container:
-            self.forecast_container.clear_widgets()
+        self.forecast_container.clear_widgets()
         for day in data['list']:
             label = Factory.ForecastLabel()
             label.date = datetime.datetime.fromtimestamp(day['dt']).strftime(
