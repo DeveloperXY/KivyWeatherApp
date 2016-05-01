@@ -4,6 +4,7 @@ from kivy.properties import ListProperty, NumericProperty, ObjectProperty
 from kivy.uix.boxlayout import BoxLayout
 
 from widgets.snow_conditions import SnowConditions
+from main import WeatherApp
 
 API_KEY = '787d0e1db679f03b5812253618f1481a'
 
@@ -16,9 +17,12 @@ class CurrentWeather(BoxLayout):
     temp_max = NumericProperty()
 
     def update_weather(self):
+        config = WeatherApp.get_running_app().config
+        temp_type = config.getdefault("General", "temp_type", "metric").lower()
         weather_template = "http://api.openweathermap.org/data/2.5/weather" \
-                           "?q={},{}&units=metric&appid={}"
-        weather_url = weather_template.format(self.location[0], self.location[1], API_KEY)
+                           "?q={},{}&units={}&appid={}"
+        weather_url = weather_template.format(
+            self.location[0], self.location[1], temp_type, API_KEY)
         request = UrlRequest(weather_url, self.weather_retrieved)
 
     def weather_retrieved(self, request, data):
