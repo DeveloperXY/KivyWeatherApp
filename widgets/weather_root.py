@@ -5,11 +5,13 @@ from kivy.uix.boxlayout import BoxLayout
 
 from add_location_form import AddLocationForm
 from widgets.current_weather import CurrentWeather
+from widgets.forecast import Forecast
 
 
 class WeatherRoot(BoxLayout):
     current_weather = ObjectProperty()
     locations = ObjectProperty()
+    forecast = ObjectProperty()
 
     def __init__(self, **kwargs):
         super(WeatherRoot, self).__init__(**kwargs)
@@ -51,6 +53,18 @@ class WeatherRoot(BoxLayout):
         self.clear_widgets()
 
         self.add_widget(self.locations)
+
+    def show_forecast(self, location=None):
+        self.clear_widgets()
+
+        if self.forecast is None:
+            self.forecast = Factory.Forecast()
+
+        if location is not None:
+            self.forecast.location = location
+
+        self.forecast.update_weather()
+        self.add_widget(self.forecast)
 
     @staticmethod
     def format_location(location):
