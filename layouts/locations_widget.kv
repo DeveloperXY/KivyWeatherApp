@@ -8,11 +8,11 @@
             ListAdapter(
             data=[],
             cls=main.LocationButton,
-            args_converter=main.locations_args_converter)
+            args_converter=main.args_converter)
     BoxLayout:
         orientation: "horizontal"
         size_hint_y: None
         height: "40dp"
-    Button:
-        text: "Add Location"
-        on_press: app.root.show_add_location_form()
+        Button:
+            text: "Add Location"
+            on_press: app.root.show_add_location_form()
