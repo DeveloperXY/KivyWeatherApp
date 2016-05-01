@@ -1,0 +1,18 @@
+<Forecast>:
+    forecast_container: forecast_container
+    orientation: "vertical"
+
+    Label:
+        size_hint_y: 0.1
+        font_size: "30dp"
+        text: app.root.format_location(root.location)
+    BoxLayout:
+        orientation: "vertical"
+        id: forecast_container
+    BoxLayout:
+        orientation: "horizontal"
+        size_hint_y: None
+        height: "40dp"
+        Button:
+            text: "Current"
+            on_press: app.root.show_current_weather(root.location)
